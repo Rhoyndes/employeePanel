@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>goWork</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b65018c277.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="header__logo">
+            <p class="header__logo-text">goWork</p>
+            <div class="header__logo-dots">
+                <span></span><span></span><span></span><span></span><span></span>
+            </div>
+        </div>
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item">Home</li>
+                <li class="header__nav-item">Employees</li>
+                <li class="header__nav-item">Admin Pannel</li>
+            </ul>
+            <div class="header__nav-profile">
+                <i class="fa-regular fa-user"></i>
+            </div>
+        </nav>
+    </div>
+    <div class="main">
+        <div class="main__header">
+            <h3 class="main__header-text">Workers</h3>
+            <div class="main-header-actions">
+                <button class="main__header-btn main__header-add">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <button class="main__header-btn main__header-filtr">
+                    <i class="fa-solid fa-list"></i>
+                </button>
+            </div>
+        </div>
+        <table class="main__table" border="1">
+            <tbody class="main__table-body">
+            </tbody>
+            <tfoot>
+                <td colspan="3" style="background-color: rgb(0, 221, 194); border-radius: 5px; border: none"></td>
+                <td class="main__table-data">Summary</td>
+                <td class="main__table-data main__table-data-salary" style="border: 2px solid rgb(0, 221, 194); color: rgb(0, 221, 194);"></td>
+            </tfoot>
+        </table>
+        <div class="main__pannel">
+            <form class="main__pannel-form" onsubmit="event.preventDefault()">
+                <label for="firstName">First name:</label>
+                <input name="firstName" type="text" id="firstName" class="main__pannel-input">
+                <label for="lastName">Last name:</label>
+                <input name="lastName" type="text" id="lastName" class="main__pannel-input">
+                <label for="">Department:</label>
+                <select name="department" id="department">
+                    <option value="IT">IT</option>
+                    <option value="Sales">Sales</option>
+                    <option value="Administration">Administration</option>
+                </select>
+                <label for="salary">Salary:</label>
+                <input name="salary" type="number" id="salary" class="main__pannel-input">
+                <button type="submit" class="main__pannel-submit">Add a worker</button>
+            </form>
+        </div>
+        <div class="main__filter">
+            <form class="main__filter-form" onsubmit="event.preventDefault()">
+                <label class="main__filter-label" for="filter-names">Enter a name</label>
+                <input class="main__filter-input" type="text" id="filter-names" name="filter-names" list="filter-name-date">
+                <datalist id="filter-name-date">
+                    <option value="Jon Addams">
+                    <option value="Jane Dee">
+                    <option value="Bob Roben">
+                    <option value="Barb Colman">
+                    <option value="Adam Murphy">
+                </datalist>
+                <div class="main__filter-multipleChoice">
+                    <label class="main__filter-label" >Select a department</label>
+                    <label class="main__filter-label-xs" for="it"><input type="checkbox" value="IT" id="it" class="main__filter-multipleChoice-it"> IT</label>
+                    <label class="main__filter-label-xs" for="sales"><input type="checkbox" value="Sales" id="sales" class="main__filter-multipleChoice-sales"> Sales</label>
+                    <label class="main__filter-label-xs" for="administration"><input type="checkbox" value="Administration" id="administration" class="main__filter-multipleChoice-administration">  Administartion</label>
+                </div>
+                <label class="main__filter-label main__filter-label-salary">Salary</label>
+                <input type="range" min="0" max="10000" class="main__filter-range" value="0" oninput="this.nextElementSibling.value = this.value">
+                <output class="main__filter-output">0</output> 
+                <button class="main__filter-submit" type="submit">Filter</button>
+            </form>
+        </div>
+    </div>
+    <script src="/app.js"></script>
+</body>
+</html>

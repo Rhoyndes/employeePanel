@@ -1,0 +1,248 @@
+@use '_colors.scss' as *;
+
+
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+body{
+    padding: 3vw 6vw;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6vw;
+    &__logo{
+        position: relative;
+        &-text{
+            font-size: 4rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+        &-dots{
+            bottom: -7.5px;
+            display: flex;
+            gap: 6px;
+            position: absolute;
+            right: 0;
+            span{
+                background-color: $dark;
+                border-radius: 50%;
+                height: 12px;
+                position: relative;
+                width: 12px;
+                &:nth-last-child(1)::before{
+                    background-color: $light;
+                    content: '';
+                    height: 8px;
+                    position: absolute;
+                    right: -4px;
+                    transform: rotate(45deg);
+                    top: 2px;
+                    width: 8px;
+                }
+            }
+        }
+    }
+    &__nav{
+        align-self: center;
+        display: flex;
+        gap: 5vw;
+        &-list{
+            display: flex;
+            gap: 3vw;
+        }
+        &-item{
+            color: $primary;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 5px 0;
+            pointer-events: none;
+            &:nth-child(2){
+                border-bottom: 2px solid $primary;
+                pointer-events: all;
+            }
+        }
+    }
+}
+.fa-user{
+    color: $primary;
+    font-size: 2.7rem;
+    pointer-events: none;
+}
+.main{
+    left: 50%;
+    min-width: 600px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    &__header{
+        display: flex;
+        justify-content: space-between;
+        &-text{
+            border-left: 4px solid $primary;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            padding-left: 20px;
+            text-transform: uppercase;
+        }
+        &-btn{
+            background-color: $primary;
+            border-radius: 5px;
+            border: none;
+            height: 30px;
+            transition: .2s;
+            width: 30px;
+            &:hover{
+                cursor: pointer;
+                scale: 1.1;
+            }
+            i{
+                font-size: 1.6rem;
+            }
+        }
+    }
+    &__table{
+        background-color: $light;
+        border-radius: 5px;
+        padding: 5px;
+        width: 100%;
+        &-data{
+            border: 1px solid $dark;
+            border-radius: 5px;
+            color: $second;
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            padding: 9px 15px;
+            &:nth-child(1){
+                border: 1px solid $dark;
+                border-radius: 5px;
+                color: rgb(0, 221, 194);
+                font-weight: 700;
+            }
+        }
+    }
+    &__pannel{
+        background-color: $second;
+        border-radius: 5px;
+        scale: 0;
+        position: absolute;
+        padding: 15px;
+        top: 43px;
+        transition: .3s;
+        right: 0;
+        width: 35%;
+        z-index: -1;
+        label{
+            color: $primary;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        input{
+            font-size: 1.6rem;
+            margin-bottom: 3px;
+            padding: 2px;
+            padding-left: 1rem;
+        }
+        select{
+            font-size: 1.6rem;
+            margin-bottom: 3px;
+            padding: 2px;
+            padding-left: 1rem;
+        }
+        &-form{
+            display: flex;
+            flex-direction: column;
+        }
+        &-submit{
+            background-color: $light;
+            border: none;
+            border-radius: 5px;
+            color: $second;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-top: 10px;
+            padding: 5px;
+            transition: .2s;
+            &:hover{
+                background-color: $primary;
+                color: $light;
+                cursor: pointer;
+            }
+        }
+    }
+    &__filter{
+        background-color:$second;
+        border-radius: 5px;
+        position: absolute;
+        padding: 15px;
+        scale: 0;
+        right: 0;
+        transition: .3s;
+        top: 45px;
+        width: 45%;
+        z-index: -1;
+        &-form{
+            display: flex;
+            flex-direction: column;
+        }
+        &-label{
+            color: $primary;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            &-salary{
+                margin-top: 15px;
+            }
+            &-xs{
+                color: $primary;
+                font-size: 1.4rem;
+                font-weight: 700;
+                letter-spacing: 1px;
+                margin-top: 5px;
+            }
+        }
+        &-input{
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            padding: 2px;
+            padding-left: 1rem;
+        }
+        &-multipleChoice{
+            display: flex;
+            flex-direction: column;
+        }
+        &-output{
+            color: $primary;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            text-align: center;
+            width: 100%;
+        }
+        &-submit{
+            background-color: $light;
+            border: none;
+            border-radius: 5px;
+            color: $second;
+            font-weight: 700;
+            font-size: 1.4rem;
+            padding: 5px;
+            transition: .2s;
+            &:hover{
+                background-color: $primary;
+                color: $light;
+                cursor: pointer;
+            }
+        }
+    }
+}
